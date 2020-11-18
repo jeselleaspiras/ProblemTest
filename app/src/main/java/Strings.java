@@ -6,10 +6,8 @@ public class Strings {
 
         String s1 = "abcdefg";
         String s2 = "efgabcd";
-
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
-
         Arrays.sort(c1);
         Arrays.sort(c2);
 
@@ -32,9 +30,6 @@ public class Strings {
         else
             System.out.println("Strings are not an anagram of each other.");
 
-        // Print first non repeated character from string
-//        System.out.println( s1.indexOf());
-
         // Count a number of vowels and consonants in a string
         int countVowels = 0;
         int countConsonants = 0;
@@ -52,8 +47,22 @@ public class Strings {
         String newCharacter = "%20";
         System.out.println(s4.replace(oldCharacter, newCharacter));
 
-
-
+        // Print first non repeated character from string
+        String s5 = "Jessie J";
+        char[] c5 = s5.toCharArray();
+        for (int i = 0; i < s5.length(); i++) {
+            boolean unique = true;
+            for (int j = 0; j < s5.length(); j++) {
+                if (i != j && c5[i] == c5[j]) {
+                    unique = false;
+                    break;
+                }
+            }
+            if (unique) {
+                System.out.println("First non-repeated character of " + s5 + " is: " + c5[i]);
+                break;
+            }
+        }
 
     }
 }
