@@ -1,7 +1,7 @@
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class LRU {
+public class HashMaps {
 
     private static final int MAX_ENTRIES = 100;
 
