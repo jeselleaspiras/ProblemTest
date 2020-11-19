@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Strings {
 
@@ -63,6 +65,22 @@ public class Strings {
                 break;
             }
         }
+
+        // Find the longest substring without repeating characters
+        String s6 = "helloworld!";
+        String res = "";
+        Map<Character, Integer> visited = new HashMap<>();
+        for (int start=0, end=0; end < s6.length(); end++) {
+            char current = s6.charAt(end);
+            if (visited.containsKey(current)) {
+                start = Math.max(visited.get(current)+1, start);
+            }
+            if (res.length() < end - start + 1) {
+                res = s6.substring(start, end + 1);
+            }
+            visited.put(current, end);
+        }
+        System.out.println("Longest substring of " + s6 + " is: " + res);
 
     }
 }
